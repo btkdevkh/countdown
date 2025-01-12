@@ -48,6 +48,16 @@ const handleSubmit = (e) => {
       form.style.display = "block";
       hr.style.display = "block";
       minuterie.style.color = "";
+
+      const audio = document.createElement("audio");
+      audio.src = "./chicken.wav";
+      audio.play();
+      audio.loop = true;
+
+      const timeout = setTimeout(() => {
+        audio.loop = false;
+        clearTimeout(timeout);
+      }, 10000);
     }
 
     countDown(minuteToSecond);
